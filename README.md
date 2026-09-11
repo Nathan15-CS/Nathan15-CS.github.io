@@ -96,5 +96,7 @@ styling work. Once you have a real post:
 To add a further post: copy a file in `writing/`, replace the content, then add a
 `<li class="post-row">` to `writing/index.html`.
 
-To add a project: copy the SeatWatch `<li class="entry reveal">` block in `index.html`
-under `id="work"` and replace its contents.
+To add a project: copy the Patch `<li class="entry reveal">` block in `index.html`
+under `id="work"` and replace its contents. (The Patch entry has no `<div class="metrics">`
+stat block — that pattern is still in `styles.css` if a future project has real, verifiable
+numbers to back it, same bar as SeatWatch's 928/884/677.)
