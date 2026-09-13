@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nathan Anapolsky · Software Engineer</title>
-<meta name="description" content="Computer Science at the University of Maryland. ML research on autonomous coding agents, and a Twilio-based call agent that waits on hold and reconnects you when a human answers.">
+<meta name="description" content="Computer Science at the University of Maryland. ML research on autonomous coding agents, and a course-alerting service running against 928 university registration systems.">
 <meta name="author" content="Nathan Anapolsky">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nathan Anapolsky · Software Engineer">
-<meta property="og:description" content="CS at Maryland. ML research on autonomous coding agents, and a Twilio-based call agent that waits on hold and reconnects you when a human answers.">
+<meta property="og:description" content="CS at Maryland. ML research on autonomous coding agents, and a course-alerting service running against 928 university registration systems.">
 <meta name="twitter:card" content="summary">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%238C4A2F'/%3E%3Ctext x='50' y='50' font-family='Georgia,serif' font-size='58' font-weight='600' fill='%23FCFCFB' text-anchor='middle' dominant-baseline='central'%3EN%3C/text%3E%3C/svg%3E">
@@ -81,8 +81,8 @@
 
     <p class="hero__body reveal">
       Right now that means two things: research on the data pipelines behind an autonomous
-      AI coding agent, and <a class="link" href="https://github.com/Nathan15-CS/patch-call-agent" target="_blank" rel="noopener">Patch</a>,
-      a call agent that waits on hold for you and bridges you in the moment a human answers.
+      AI coding agent, and <a class="link" href="https://seatwatchapp.com" target="_blank" rel="noopener">SeatWatch</a>,
+      a course-alerting service I own end to end across 928 university registration systems.
       Most of what I&rsquo;ve learned has come from chasing a result that looked wrong until I
       understood why.
     </p>
@@ -120,27 +120,33 @@
       <li class="entry reveal">
         <div class="entry__head">
           <h3 class="entry__title">
-            <a href="https://github.com/Nathan15-CS/patch-call-agent" target="_blank" rel="noopener">Patch<span class="ext" aria-hidden="true">&#8599;</span></a>
+            <a href="https://seatwatchapp.com" target="_blank" rel="noopener">SeatWatch<span class="ext" aria-hidden="true">&#8599;</span></a>
           </h3>
-          <span class="entry__when">Aug 2026</span>
+          <span class="entry__when">Summer 2026 &ndash; Present</span>
         </div>
-        <p class="entry__stack">Node.js &middot; Express &middot; Twilio Programmable Voice</p>
+        <p class="entry__stack">Python &middot; SQLite &middot; Twilio &middot; Stripe</p>
         <ul class="entry__points">
           <li>
-            A <strong>call automation agent</strong> that dials a business, optionally
-            navigates its IVR menu by DTMF, and stays on hold so you don&rsquo;t have to.
+            A course-seat alerting service I own end to end, integrating
+            <strong>928 university registration systems</strong> across 80+ undocumented
+            platform families. Each one was reverse-engineered from live traffic, with no
+            public API to build against.
           </li>
           <li>
-            Listens to the call in real time, using <strong>speech transcripts and
-            confidence scores</strong> to detect when a human representative picks up
-            rather than hold music or an automated prompt.
+            884 of those are <strong>verified working against live data</strong> by an
+            automated accuracy gate. A school that can&rsquo;t prove itself doesn&rsquo;t ship.
           </li>
           <li>
-            Calls you back the moment a human answers and <strong>bridges both parties
-            into a Twilio conference</strong>, with SMS status updates and a configurable
-            maximum hold time as a safety valve.
+            Designed a <strong>fail-closed, correctness-first architecture</strong> around a
+            single invariant: never send a false alert. Backed by a 677-check regression
+            suite and per-cycle reconciliation against live source-of-truth data.
           </li>
         </ul>
+        <div class="metrics">
+          <div class="metric"><span class="metric__num">928</span><span class="metric__label">SYSTEMS</span></div>
+          <div class="metric"><span class="metric__num">884</span><span class="metric__label">VERIFIED</span></div>
+          <div class="metric"><span class="metric__num">677</span><span class="metric__label">CHECKS</span></div>
+        </div>
       </li>
 
 
