@@ -745,3 +745,29 @@ a { color: inherit; }
   .link, .entry__title a { background: none; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; color: #555; }
 }
+
+/* Project screenshot */
+.shot {
+  margin: var(--sp-4) 0 0;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.shot figcaption {
+  margin-top: var(--sp-2);
+  font: 450 var(--step--2) / 1.4 var(--font-mono);
+  color: var(--text-mute);
+  letter-spacing: 0.02em;
+}
+
+@media print {
+  .shot img { max-width: 300px; }
+}
