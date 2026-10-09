@@ -89,6 +89,30 @@
     io.observe(el);
   });
 
+  /* An instant jump past content never fires the observer for what was
+     skipped, so it would stay blank until scrolled back over. Browsers do
+     this routinely when restoring scroll position on back-navigation.
+     Sweep anything already at or above the fold. */
+  var sweeping = false;
+  function sweep() {
+    sweeping = false;
+    var h = window.innerHeight;
+    targets.forEach(function (el) {
+      if (el.classList.contains("is-visible")) return;
+      if (el.getBoundingClientRect().top < h) {
+        el.style.transitionDelay = "0ms";
+        el.classList.add("is-visible");
+        io.unobserve(el);
+      }
+    });
+  }
+  window.addEventListener("scroll", function () {
+    if (sweeping) return;
+    sweeping = true;
+    window.requestAnimationFrame(sweep);
+  }, { passive: true });
+  window.addEventListener("load", sweep);
+
   /* Failsafe: if nothing above the fold has revealed shortly after load,
      the observer isn't working in this environment. Show everything. */
   window.setTimeout(function () {
